@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import Modal from 'react-modal'
+import {GrClose} from 'react-icons/gr'
 
 function Sidebar(props){
 
@@ -31,7 +32,9 @@ function Sidebar(props){
             className="about-modal"
             overlayClassName="about-modal-overlay"
             >
-            <button onClick={toggleModal}>close</button>
+            <button className="modal-close-btn" onClick={toggleModal}>
+                <GrClose/>
+            </button>
             <h3>
                 About BrandColors
             </h3>
