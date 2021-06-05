@@ -74,11 +74,14 @@ body {
 
 .content {
   flex: 1;
+  overflow: auto;
 
   .header {
     height: 60px;
     border-bottom: 1px solid #ccc;
     display: flex;
+    position: sticky;
+    top: 0;
 
     .search {
       position: relative;
@@ -107,6 +110,10 @@ body {
         padding: 0 20px 0 60px;
       }
     }
+  }
+
+  .brands {
+    padding: 25px;
   }
 }
 
