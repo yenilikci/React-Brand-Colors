@@ -74,17 +74,37 @@ body {
 
 .content {
   flex: 1;
+
   .header {
     height: 60px;
     border-bottom: 1px solid #ccc;
     display: flex;
-    .search{
+
+    .search {
+      position: relative;
       flex: 1;
+
+      .icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
       input {
         width: 100%;
         height: 100%;
         font-size: 16px;
-        padding: 0 20px;
+        padding: 0 20px 0 60px;
       }
     }
   }
