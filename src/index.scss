@@ -132,13 +132,15 @@ body {
 
         span {
           background: var(--bgColor);
-          flex: 1;
           height: 40px;
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 14px;
           font-weight: 500;
+          color: var(--textColor);
+          text-indent: -9999px;
+          width: 70px;
         }
       }
     }

@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import {getContrastYIQ} from '../helpers'
 
 function Brand({brand}) {
     return(
@@ -6,7 +7,7 @@ function Brand({brand}) {
             <h5>{brand.title}</h5>
             <div className="brand-colors">
                 {brand.colors.map(color => (
-                    <span style={{'--bgColor': `#${color}`}}>
+                    <span style={{'--bgColor': `#${color}`,'--textColor' : `${getContrastYIQ(color)}`}}>
                         {color}
                     </span>
                 ))}
