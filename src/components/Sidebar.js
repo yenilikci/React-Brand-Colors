@@ -1,6 +1,13 @@
 import {useState} from 'react'
+import Modal from 'react-modal'
 
 function Sidebar(props){
+
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const toggleModal = () => {
+        setModalIsOpen(!modalIsOpen);
+    }
+
     return(
         <>
            <aside className="sidebar">
@@ -13,11 +20,25 @@ function Sidebar(props){
                 <nav className="menu">
                     <ul>
                         <li>
-                            <a>About BrandColors</a>
+                            <a onClick={toggleModal}>About BrandColors</a>
                         </li>
                     </ul>
                 </nav>
            </aside>
+           <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={toggleModal}
+            >
+            <button onClick={toggleModal}>close</button>
+            <div>I am a modal</div>
+            <form>
+                <input />
+                <button>tab navigation</button>
+                <button>stays</button>
+                <button>inside</button>
+                <button>the modal</button>
+            </form>
+           </Modal>
         </>
     )
 }
