@@ -2,9 +2,9 @@ import {useState} from 'react'
 
 function Content(props) {
     return(
-        <div>
+        <main className="content">
             hello
-        </div>
+        </main>
     )
 }
 
