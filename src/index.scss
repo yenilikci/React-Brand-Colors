@@ -75,6 +75,7 @@ body {
 .content {
   flex: 1;
   overflow: auto;
+  background: #f8f8f8;
 
   .header {
     height: 60px;
@@ -114,6 +115,33 @@ body {
 
   .brands {
     padding: 25px;
+
+    .brand {
+      border: 1px solid #bbb;
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 10px;
+
+      .h5 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .brand-colors {
+        display: flex;
+
+        span {
+          background: var(--bgColor);
+          flex: 1;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+    }
   }
 }
 

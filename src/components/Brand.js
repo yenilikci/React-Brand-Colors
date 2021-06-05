@@ -6,7 +6,7 @@ function Brand({brand}) {
             <h5>{brand.title}</h5>
             <div className="brand-colors">
                 {brand.colors.map(color => (
-                    <span>
+                    <span style={{'--bgColor': `#${color}`}}>
                         {color}
                     </span>
                 ))}
