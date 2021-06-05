@@ -1,9 +1,12 @@
 import {useState} from 'react'
+import Search from './Search'
 
 function Content(props) {
     return(
         <main className="content">
-            hello
+            <header className="header">
+                <Search/>
+            </header>
         </main>
     )
 }
