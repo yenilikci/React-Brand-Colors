@@ -5,6 +5,13 @@ import Content from "./components/Content";
 import { useState, useEffect } from "react";
 import BrandsData from "./brands.json";
 import Copied from "./components/Copied";
+"import Collection from './components/Collection'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom'
 
 function App() {
   const brandsArray = [];
@@ -48,7 +55,16 @@ function App() {
       <MainContext.Provider value={data}>
         {copied && <Copied color={copied} />}
         <Sidebar />
-        <Content />
+        <Router>
+          <Switch>
+            <Route path="/" exact>
+              <Content />
+            </Route>
+            <Route path="/collection/:slugs">
+              <Collection/>
+            </Route>
+          </Switch>
+        </Router>
       </MainContext.Provider>
     </>
   );
