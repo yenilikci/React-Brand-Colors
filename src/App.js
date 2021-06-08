@@ -5,7 +5,7 @@ import Content from "./components/Content";
 import { useState, useEffect } from "react";
 import BrandsData from "./brands.json";
 import Copied from "./components/Copied";
-"import Collection from './components/Collection'
+import Collection from './components/Collection'
 import {
   BrowserRouter as Router,
   Switch,
