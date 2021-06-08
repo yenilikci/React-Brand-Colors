@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import BrandsData from "./brands.json";
 import Copied from "./components/Copied";
 import Collection from './components/Collection'
+import {forceCheck} from 'react-lazyload'
 import {
   BrowserRouter as Router,
   Switch,
@@ -40,6 +41,10 @@ function App() {
   useEffect(() => {
     setBrands(brandsArray.filter(brand => brand.title.toLowerCase().includes(search)))
   },[search])
+
+  useEffect(() => {
+    forceCheck()
+  },[brands])
 
   const data = {
     brands,
