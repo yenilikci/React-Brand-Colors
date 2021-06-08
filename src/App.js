@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar'
 import Content from './components/Content'
 import {useState,useEffect} from 'react'
 import BrandsData from './brands.json'
+import Copied from './components/Copied';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
 
   const [brands, setBrands] = useState(brandsArray)
   const [selectedBrands, setSelectedBrands] = useState([])
+  const [copied, setCopied] = useState(false)
 
   useEffect(() => {
     console.log(selectedBrands)
@@ -22,12 +24,14 @@ function App() {
   const data = {
     brands,
     selectedBrands,
-    setSelectedBrands
+    setSelectedBrands,
+    setCopied
   }
 
   return (
     <>
       <MainContext.Provider value={data}>
+        {copied && <Copied color={copied} />}
         <Sidebar/>
         <Content/>
       </MainContext.Provider>

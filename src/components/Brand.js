@@ -4,7 +4,7 @@ import MainContext from "../MainContext";
 import ClipboardButton from 'react-clipboard.js'
 
 function Brand({ brand }) {
-  const { setSelectedBrands, selectedBrands } = useContext(MainContext);
+  const { setSelectedBrands, selectedBrands,setCopied } = useContext(MainContext);
 
   const toggleSelected = () => {
     if (selectedBrands.includes(brand.slug)) {
@@ -13,6 +13,10 @@ function Brand({ brand }) {
       setSelectedBrands([...selectedBrands, brand.slug]);
     }
   };
+
+  const setColor = (color) => {
+    setCopied(color)
+  }
 
   return (
     <div
@@ -23,7 +27,7 @@ function Brand({ brand }) {
       <h5 onClick={toggleSelected}>{brand.title}</h5>
       <div className="brand-colors">
         {brand.colors.map((color) => (
-          <ClipboardButton data-clipboard-text={color} component="span"  style={{
+          <ClipboardButton data-clipboard-text={color} onSuccess={() => setColor(color)} component="span"  style={{
             "--bgColor": `#${color}`,
             "--textColor": `${getContrastYIQ(color)}`,
           }}>
