@@ -123,8 +123,30 @@ body {
         padding: 0 20px 0 60px;
       }
     }
+
     .download {
       padding-right: 25px;
+      display: flex;
+      align-items: center;
+      margin-right: 15px;
+      a,
+      button {
+        height: 30px;
+        width: 30px;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        svg {
+          height: 15px;
+          width: 15px;
+        }
+      }
+      .actions {
+        display: flex;
+      }
       .selected {
         font-size: 14px;
         font-weight: 500;
@@ -138,7 +160,7 @@ body {
           svg {
             display: block;
             margin-right: 10px;
-            path{
+            path {
               stroke: #999;
             }
           }
