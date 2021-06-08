@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { getContrastYIQ } from "../helpers";
 import MainContext from "../MainContext";
+import ClipboardButton from 'react-clipboard.js'
 
 function Brand({ brand }) {
   const { setSelectedBrands, selectedBrands } = useContext(MainContext);
@@ -22,14 +23,12 @@ function Brand({ brand }) {
       <h5 onClick={toggleSelected}>{brand.title}</h5>
       <div className="brand-colors">
         {brand.colors.map((color) => (
-          <span
-            style={{
-              "--bgColor": `#${color}`,
-              "--textColor": `${getContrastYIQ(color)}`,
-            }}
-          >
+          <ClipboardButton data-clipboard-text={color} component="span"  style={{
+            "--bgColor": `#${color}`,
+            "--textColor": `${getContrastYIQ(color)}`,
+          }}>
             {color}
-          </span>
+          </ClipboardButton>
         ))}
       </div>
     </div>
