@@ -21,6 +21,15 @@ function App() {
     console.log(selectedBrands)
   },[selectedBrands])
 
+
+  useEffect(() => {
+    if(copied){
+      setTimeout(() => {
+        setCopied(false);
+      },1000)
+    }
+  }, [copied])
+
   const data = {
     brands,
     selectedBrands,
