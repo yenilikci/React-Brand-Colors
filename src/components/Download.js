@@ -12,14 +12,14 @@ function Download() {
       let output = "";
       switch (cssMethod) {
         case "css":
-          output += ':root {\n'
+          output += ":root {\n";
           selectedBrands.map((slug) => {
             let brand = brands.find((brand) => brand.slug === slug);
             brand.colors.map((color, key) => {
               output += `--${slug}-${key}: #${color}\n`;
             });
           });
-          output += '}'
+          output += "}";
           break;
 
         case "scss":
@@ -61,14 +61,14 @@ function Download() {
   return (
     <div className="download">
       <div className="actions">
-        <a download={`brands.${cssMethod}`} href={downloadUrl}>
-          <GrDownload />
-        </a>
         <select onChange={(e) => setCssMethod(e.target.value)}>
           <option value="css">CSS</option>
           <option value="scss">SCSS</option>
           <option value="less">LESS</option>
         </select>
+        <a download={`brands.${cssMethod}`} href={downloadUrl}>
+          <GrDownload />
+        </a>
         <button onClick={getLink}>
           <GrLink />
         </button>
