@@ -1,13 +1,17 @@
-import {userState} from 'react'
+import {useContext, userState} from 'react'
 import {GrSearch} from 'react-icons/gr'
+import MainContext from '../MainContext'
 
 function Search(props) {
+
+    const {search,setSearch} = useContext(MainContext)
+
     return(
         <div className="search">
             <div className="icon">
                 <GrSearch/>
             </div>
-            <input type="text" placeholder="Search Brands"/>
+            <input type="text" onChange={(e) => setSearch(e.target.value)} placeholder="Search Brands"/>
         </div>
     )
 }
