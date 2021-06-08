@@ -2,7 +2,7 @@ import './App.css';
 import MainContext from './MainContext'
 import Sidebar from './components/Sidebar'
 import Content from './components/Content'
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import BrandsData from './brands.json'
 
 function App() {
@@ -15,8 +15,13 @@ function App() {
   const [brands, setBrands] = useState(brandsArray)
   const [selectedBrands, setSelectedBrands] = useState([])
 
+  useEffect(() => {
+    console.log(selectedBrands)
+  },[selectedBrands])
+
   const data = {
     brands,
+    selectedBrands,
     setSelectedBrands
   }
 
